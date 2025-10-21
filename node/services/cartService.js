@@ -11,7 +11,7 @@ export const createOrder = (id,order) => {
     const newOrder = {
     id,
     order,
-    createdAt: new Date(),
+    createdAt: new Date().toLocaleString(),
     status: 'ordered'
     };
 
@@ -21,7 +21,7 @@ export const createOrder = (id,order) => {
 export const updateOrder = (id,updates) => {
     const cart = findOrderById(id);
     if (!cart) return false;
-
+    console.log(updates)
     if (updates.order) cart.order = updates.order;
     if (updates.status) cart.status = updates.status;
     return true;

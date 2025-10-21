@@ -32,9 +32,8 @@ export const addOrder = (req, res) => {
 
 export const updateOrder = (req, res) => {
     const { id } = req.params;
-    const { order } = req.body;
-
-    const success = cartService.updateOrder(id, { order });
+    const order= req.body;
+    const success = cartService.updateOrder(id, order);
 
     if (!success) {
         return res.status(404).json({ message: 'Список товаров не найден или не обновлен' });
