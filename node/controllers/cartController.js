@@ -20,7 +20,6 @@ export const getOrderById = (req, res) => {
 export const addOrder = (req, res) => {
     const id = cartService.addId()
     const { order } = req.body;
-    console.log(id)
     const success = cartService.createOrder(id,order);
 
     if (!success) {
